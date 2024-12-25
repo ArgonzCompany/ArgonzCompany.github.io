@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive RTL One Page Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Apply BYekan font family globally */
+    body {
+      font-family: 'B Yekan', sans-serif;
+      font-weight: bold;
+    }
+
+    .h_iframe-aparat_embed_frame{
+      position:relative;
+    }
+    
+    .h_iframe-aparat_embed_frame .ratio{
+      display:block;width:100%;height:auto;
+    }
+    
+    .h_iframe-aparat_embed_frame iframe{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+    }
+
+
+    /* Make mobile menu full width */
+    #mobile-menu {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    /* Ensure the close button is aligned to the right */
+    #close-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      background: none;
+      border: none;
+    }
+
+    /* Make sure menu items are centered */
+    #mobile-menu ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+    }
+
+    #mobile-menu li {
+      margin: 15px 0;
+    }
+
+    /* Toggle visibility of links on large screens */
+    #menu {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      #menu {
+        display: flex;
+      }
+      #menu-toggle {
+        display: none;
+      }
+      #mobile-menu {
+        display: none;
+      }
+    }
+
+    footer {
+      background-color: #fd8352;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icons a {
+      margin: 0 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-social-icons svg {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      
+      <!-- Hamburger Icon (Mobile) -->
+      <button id="menu-toggle" class="lg:hidden text-2xl">
+        <span class="block w-6 h-1 bg-gray-800 mb-1"></span>
+        <span class="block w-6 h-1 bg-gray-800 mb-1"></span>
+        <span class="block w-6 h-1 bg-gray-800"></span>
+      </button>
+
+      <!-- Navigation Links (Visible on Large Screens) -->
+      <nav>
+        <ul id="menu" class="hidden lg:flex">
+          <li class="px-4"><a href="#about" class="hover:text-[#fd8352] text-lg">درباره ما</a></li>
+          <li class="px-4"><a href="#services" class="hover:text-[#fd8352] text-lg">خدمات ما</a></li>
+          <li class="px-4"><a href="#portfolio" class="hover:text-[#fd8352] text-lg">محصولات</a></li>
+          <li class="px-4"><a href="#footer" class="hover:text-[#fd8352] text-lg">تماس با ما</a></li>
+        </ul>
+      </nav>
+      <!-- Logo (Hidden on Mobile, Shown on Large Screens) -->
+      <!-- <h1 class="text-2xl font-bold lg:block hidden">MyWebsite</h1> -->
+       <img src="images/argonz_log.png" class=" w-[40px] h-[40px] lg:block hidden">
+    </div>
+  </header>
+
+  <!-- Mobile Menu Popup (Hidden by default) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 hidden w-full h-screen">
+    <button id="close-menu" class="mt-8 text-3xl text-[#fd8352]">&times;</button>
+    <div class="flex justify-center items-center h-full">
+      <ul class="bg-white rounded-lg shadow-lg p-8 text-center space-y-4 w-full">
+        <li><a href="#about" class="block text-xl font-bold hover:text-[#fd8352]">درباره ما</a></li>
+        <li><a href="#services" class="block text-xl font-bold hover:text-[#fd8352]">خدمات ما</a></li>
+        <li><a href="#portfolio" class="block text-xl font-bold hover:text-[#fd8352]">محصولات</a></li>
+        <li><a href="#footer" class="block text-xl font-bold hover:text-[#fd8352]">تماس با ما</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="h-screen bg-cover bg-center" style="background-image: url('images/bg-zhaket-cover.png');">
+    <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+      <div class="text-center text-white">
+        <h1 class="text-4xl font-bold mb-4">به بخش محصولات ژاکت آرگونز خوش آمدید</h1>
+        <p class="text-lg mb-8">شعار همیشگی ما: یکبار انجام بده، درست انجام بده</p>
+        <a href="https://www.zhaket.com/" class="bg-[#fd8352] px-6 py-3 text-white rounded">بیشتر بدانید</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto text-center w-1/2">
+      <h2 class="text-3xl font-bold mb-6">درباره ما</h2>
+      <p class="text-gray-700 text-right text-justify">تیم آرگونز، یک تیم فعال در حوزه وب و هوش مصنوعی است. هدف ما در این است که به نیاز افراد یا سازمان‌ها در طراحی سرویس و خدماتشان پاسخ درست و منطقی دهیم. و این جواب منطقی و درست چیزی جز طراحی نرم افزارهای مبتنی بر اصول مهندسی و به کارگیری جدیدترین اتوماسیون‌ها بر اساس هوش مصنوعی نیست. آرگونز در پی آن است که همواره مشتریان از خدماتش راضی باشند و محصولات جدید و نوآورانه اش را دنبال کنند.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">خدمات ما</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-bold mb-2">توسعه وب</h3>
+          <p class="text-gray-700 text-right text-justify">ایجاد وب سایت های زیبا، افزونه های وردپرسی و اپلیکیشن های تحت وب بر اساس آخرین تکنولوژی ها</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-bold mb-2">هوش مصنوعی</h3>
+          <p class="text-gray-700 text-right text-justify">طراحی و توسعه سیستم های خودمختار و توصیه گر بر اساس تکنیک های یادگیری ماشین و یادگیری عمیق</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded">
+          <h3 class="text-xl font-bold mb-2">آموزش</h3>
+          <p class="text-gray-700 text-right text-justify">آموزش آخرین تکنولوژی ها و ابزارهای برنامه نویسی به روز در حوزه هوش مصنوعی و وب</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">محصولات</h2>
+      <div class="mb-8">
+        <button class="bg-gray-200 px-4 py-2 rounded mx-2 hover:bg-[#fd8352]" onclick="filterPortfolio('all')">همه</button>
+        <button class="bg-gray-200 px-4 py-2 rounded mx-2 hover:bg-[#fd8352]" onclick="filterPortfolio('plugin')">افزونه</button>
+        <!-- <button class="bg-gray-200 px-4 py-2 rounded mx-2 hover:bg-[#fd8352]" onclick="filterPortfolio('theme')">قالب</button> -->
+      </div>
+      <div id="portfolio-items" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="portfolio-item" data-category="plugin">
+          <div class="h_iframe-aparat_embed_frame">
+            <span style="display: block;padding-top: 57%"></span>
+            <iframe src="https://www.aparat.com/video/video/embed/videohash/saa4yfn/vt/frame?titleShow=true"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+          </div>
+          <p class="mt-2">دستیار متن هوش مصنوعی آرگونز</p>
+          <a href="https://www.zhaket.com" target="_blank" class="inline-block mt-4 bg-[#fd8352] text-white px-6 py-3 rounded-full">
+            خرید از ژاکت <img src="https://www.zhaket.com/_next/static/media/zhk-dark-logo.ab40b3b1.svg" class="h-6 inline-block mr-2">
+          </a>
+        </div>
+        <!-- <div class="portfolio-item" data-category="theme">
+          <div class="h_iframe-aparat_embed_frame">
+            <span style="display: block;padding-top: 57%"></span>
+            <iframe src="https://www.aparat.com/video/video/embed/videohash/saa4yfn/vt/frame?titleShow=true"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+          </div>
+          <p class="mt-2">قالب هوش مصنوعی آرگونز</p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="text-white py-8">
+    <div class="container mx-auto text-center">
+      <div class="footer-social-icons">
+        <a href="https://instagram.com/argonzweb" target="_blank" class="mx-2 hover:text-blue-400">
+          <svg width="20px" height="20px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier">
+            <path stroke="#ffffff" stroke-width="12" d="M96 162c-14.152 0-24.336-.007-32.276-.777-7.849-.761-12.87-2.223-16.877-4.741a36 36 0 0 1-11.33-11.329c-2.517-4.007-3.98-9.028-4.74-16.877C30.007 120.336 30 110.152 30 96c0-14.152.007-24.336.777-32.276.76-7.849 2.223-12.87 4.74-16.877a36 36 0 0 1 11.33-11.33c4.007-2.517 9.028-3.98 16.877-4.74C71.663 30.007 81.847 30 96 30c14.152 0 24.336.007 32.276.777 7.849.76 12.87 2.223 16.877 4.74a36 36 0 0 1 11.329 11.33c2.518 4.007 3.98 9.028 4.741 16.877.77 7.94.777 18.124.777 32.276 0 14.152-.007 24.336-.777 32.276-.761 7.849-2.223 12.87-4.741 16.877a36 36 0 0 1-11.329 11.329c-4.007 2.518-9.028 3.98-16.877 4.741-7.94.77-18.124.777-32.276.777Z"/>
+            <circle cx="96" cy="96" r="30" stroke="#ffffff" stroke-width="12"/>
+            <circle cx="135" cy="57" r="9" fill="#ffffff"/>
+            </g>
+            </svg>
+        </a>
+        <a href="https://t.me/argonzweb" target="_blank" class="mx-2 hover:text-pink-400">
+          <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier">
+            <path d="M22.26465,2.42773a2.04837,2.04837,0,0,0-2.07813-.32421L2.26562,9.33887a2.043,2.043,0,0,0,.1045,3.81836l3.625,1.26074,2.0205,6.68164A.998.998,0,0,0,8.134,21.352c.00775.012.01868.02093.02692.03259a.98844.98844,0,0,0,.21143.21576c.02307.01758.04516.03406.06982.04968a.98592.98592,0,0,0,.31073.13611l.01184.001.00671.00287a1.02183,1.02183,0,0,0,.20215.02051c.00653,0,.01233-.00312.0188-.00324a.99255.99255,0,0,0,.30109-.05231c.02258-.00769.04193-.02056.06384-.02984a.9931.9931,0,0,0,.20429-.11456,250.75993,250.75993,0,0,1,.15222-.12818L12.416,18.499l4.03027,3.12207a2.02322,2.02322,0,0,0,1.24121.42676A2.05413,2.05413,0,0,0,19.69531,20.415L22.958,4.39844A2.02966,2.02966,0,0,0,22.26465,2.42773ZM9.37012,14.73633a.99357.99357,0,0,0-.27246.50586l-.30951,1.504-.78406-2.59307,4.06525-2.11695ZM17.67188,20.04l-4.7627-3.68945a1.00134,1.00134,0,0,0-1.35352.11914l-.86541.9552.30584-1.48645,7.083-7.083a.99975.99975,0,0,0-1.16894-1.59375L6.74487,12.55432,3.02051,11.19141,20.999,3.999Z"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <p>تمامی حقوق این سایت متعلق به آرگونز است. هر گونه کپی برداری پیگرد قانونی دارد.</p>
+    </div>
+  </footer>
+
+  <!-- Script to toggle the mobile menu and filter portfolio items -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
+
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      menu.classList.add("hidden");
+    });
+
+    // Function to filter portfolio items based on category
+    function filterPortfolio(category) {
+      const items = document.querySelectorAll('.portfolio-item');
+      items.forEach(item => {
+        item.style.display = category === 'all' || item.dataset.category === category ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
